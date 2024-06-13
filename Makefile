@@ -2,7 +2,7 @@ DOCKER_NAMESPACE := eidolon-ai
 DOCKER_REPO_NAME := agent-machine
 VERSION := $(shell grep -m 1 '^version = ' pyproject.toml | awk -F '"' '{print $$2}')
 SDK_VERSION := $(shell grep -m 1 '^eidolon-ai-sdk = ' pyproject.toml | awk -F '[="^]' '{print $$4}')
-REQUIRED_ENVS := OPENAI_API_KEY
+REQUIRED_ENVS := OPENAI_API_KEY CSE_ID CSE_TOKEN
 
 .PHONY: serve serve-dev check docker docker-bash docker-push _docker-push .env sync update
 
