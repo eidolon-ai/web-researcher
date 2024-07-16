@@ -21,10 +21,10 @@ git clone https://github.com/eidolon-ai/web-researcher.git
 cd web-researcher
 ```
 
-Then run the server in dev mode, use the following command:
+Then run the server using docker, use the following command:
 
 ```bash
-make serve-dev
+make docker-serve
 ```
 
 **WARNING:** By default the server is running in dev mode which does not persist the machine state between restarts. 
