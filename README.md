@@ -27,28 +27,14 @@ Then run the server using docker, use the following command:
 make docker-serve
 ```
 
-**WARNING:** By default the server is running in dev mode which does not persist the machine state between restarts. 
-To start the server in non-dev mode, use the following command:
-
-```bash
-  make serve
-```
-
-This will assume mongodb is running locally on the default port. If you need to connect to a different mongodb instance,
-you can set the `MONGO_CONNECTION_STR` and `MONGO_DATABASE_NAME` environment variables to the appropriate connection string.
-
 The first time you run this command, you may be prompted to enter credentials that the machine needs 
-to run (ie, OpenAI API Key, Google CSE key, and Google CSE Token).
+to run (ie, OpenAI API Key).
 
-These resources will be saved in the `.env` file in the project root.
-
-To use other LLM services, you will need to add the appropriate credentials to the `.env` file in the project root. 
-(ie, ANTHROPIC_API_KEY, MISTRAL_API_KEY, OLLAMA_URL, etc.)
-
-This command will download the dependencies required to run your agent machine and start the Eidolon http server in 
+This command will download the dependencies required to run your agent machine and start the Eidolon http server in
 "dev-mode".
 
 If the server starts successfully, you should see the following output:
+
 ```
 Starting Server...
 INFO:     Started server process [34623]
@@ -65,9 +51,10 @@ INFO - Server Started in 1.50s
 WARNING: This will work for local k8s environments only. See [Readme.md in the k8s directory](./k8s/Readme.md) if you are using this against a cloud based k8s environment.
 
 To use kubernetes for local development, you will need to have the following installed:
-* [Docker](https://docs.docker.com/get-docker/)
-* [Kubernetes](https://kubernetes.io/docs/tasks/tools/)
-* [Helm](https://helm.sh/docs/intro/install/)
+
+- [Docker](https://docs.docker.com/get-docker/)
+- [Kubernetes](https://kubernetes.io/docs/tasks/tools/)
+- [Helm](https://helm.sh/docs/intro/install/)
 
 Clone the project and navigate to the project directory:
 
@@ -77,6 +64,13 @@ cd agent-machine
 ```
 
 ### Installation
+
+If you are using Minikube, run the following commands before any make commands:
+
+```bash
+alias kubectl="minikube kubectl --"
+eval $(minikube docker-env)
+```
 
 Make sure your kubernetes environment is set up properly and install the Eidolon k8s operator.
 
@@ -93,6 +87,7 @@ make k8s-serve
 ```
 
 If the server starts successfully, you should see the following output:
+
 ```
 Deployment is ready. Tailing logs from new pods...
 INFO:     Started server process [1]
