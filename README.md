@@ -1,6 +1,11 @@
-# Eidolon Agent Machine Template
+# Eidolon Web Researcher Recipe
 
-This project serves as a template for individuals interested in building agents with Eidolon.
+This project shows an example of a multi-llm multimedia enabled chatbot that can do web research. This example supports accessing
+the researcher agent either directly, using REST, or through a chatbot interface
+
+## Core Concepts
+1. Customizing the AgentProcessingUnit
+2. Running the UI
 
 ## Directory Structure
 
@@ -12,8 +17,8 @@ This project serves as a template for individuals interested in building agents 
 First you need to clone the project and navigate to the project directory:
 
 ```bash
-git clone https://github.com/eidolon-ai/agent-machine.git
-cd agent-machine
+git clone https://github.com/eidolon-ai/web-researcher.git
+cd web-researcher
 ```
 
 Then run the server using docker, use the following command:
@@ -22,7 +27,7 @@ Then run the server using docker, use the following command:
 make docker-serve
 ```
 
-The first time you run this command, you may be prompted to enter credentials that the machine needs
+The first time you run this command, you may be prompted to enter credentials that the machine needs 
 to run (ie, OpenAI API Key).
 
 This command will download the dependencies required to run your agent machine and start the Eidolon http server in
@@ -50,13 +55,6 @@ To use kubernetes for local development, you will need to have the following ins
 - [Docker](https://docs.docker.com/get-docker/)
 - [Kubernetes](https://kubernetes.io/docs/tasks/tools/)
 - [Helm](https://helm.sh/docs/intro/install/)
-
-Clone the project and navigate to the project directory:
-
-```bash
-git clone https://github.com/eidolon-ai/agent-machine.git
-cd agent-machine
-```
 
 ### Installation
 
