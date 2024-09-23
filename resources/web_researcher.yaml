@@ -5,14 +5,14 @@ metadata:
 spec:
   implementation: WebSearchAgent
 ---
-apiVersion: eidolon/v1
+apiVersion: eserver.eidolonai.com/v1alpha1
 kind: Agent
 metadata:
   name: scraping_agent
 spec:
   implementation: WebScrapingAgent
 ---
-apiVersion: eidolon/v1
+apiVersion: server.eidolonai.com/v1alpha1
 kind: Agent
 metadata:
   name: research_agent
