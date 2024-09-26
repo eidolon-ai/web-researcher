@@ -1,14 +1,14 @@
 apiVersion: server.eidolonai.com/v1alpha1
 kind: Agent
 metadata:
-  name: conversational_agent
+  name: conversational-agent
 spec:
   agent_refs:
-    - research_agent
-  system_prompt:
-    You are a helpful assistant. Please respond using markdown unless told otherwise by the user. Output all multi-media content as embedded content including image, video, and audio.
-    Only generate images or speach if directly asked by the user.
-
+    - research-agent
+  system_prompt: |
+    You are a helpful assistant. Respond using markdown unless told otherwise by the user. 
+    Output all multi-media content as embedded content including image, video, and audio.
+    Only generate images or speech if directly asked by the user.
   actions:
     - name: "converse"
       description: "A copilot that engages with the user."
@@ -27,6 +27,8 @@ spec:
     - apu: GPT4-turbo
       title: GPT4 Turbo
       default: true
+    - apu: GPT4o-mini
+      title: GPT4o Mini
     - apu: ClaudeOpus
       title: Claude Opus
     - apu: ClaudeSonnet
