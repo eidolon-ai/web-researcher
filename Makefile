@@ -47,7 +47,7 @@ test: .make/poetry_install .env .make/playwright
 	poetry install
 	@touch .make/poetry_install
 
-.make/playwright: .make
+.make/playwright: .make .make/poetry_install
 	playwright install --with-deps chromium
 	@touch .make/playwright
 
