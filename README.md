@@ -8,10 +8,10 @@ the researcher agent either directly, using REST, or through a chatbot interface
 The `research_agent` is the top level agent that coordinates web research using the search_agent and scraping_agent.
 
 ### search_agent
-Can perform free form research on the web using a Google Custom Search Engine.
+Returns web search results using <a href="https://developers.google.com/custom-search" target=_blank>Google Programmable Search Engine</a> (formerly Custom Search Engine, or CSE).
 
 ### scraping_agent
-Can navigate web pages (including javascript loaded content) to perform in-depth research.
+Navigates, extracts and manipulates web pages (including javascript loaded content) using <a href="https://www.crummy.com/software/BeautifulSoup/" target=_blank>beautifulsoup</a>. Scraped content can then be used and interpreted by another agent (in this case research_agent above).
 
 ## Prerequisites
 ### OpenAI API Key
@@ -26,9 +26,11 @@ After creating this resource, you will be prompted for the search engine ID (`CS
 
 ## Running the Server in Docker
 
-To the server using docker, use the following command:
+To clone and run this example using docker, use the following commands:
 
 ```bash
+git clone https://github.com/eidolon-ai/web-researcher.git
+cd web-researcher
 make docker-serve
 ```
 
