@@ -8,7 +8,7 @@ COPY components/ components/
 COPY README.md README.md
 RUN mkdir dist
 RUN touch dist/requirements.txt
-RUN poetry export --without-hashes --format=requirements.txt > dist/requirements.txt
+RUN poetry export --without dev --without-hashes --format=requirements.txt > dist/requirements.txt
 RUN poetry export --without-hashes --format=requirements.txt > dist/pre_requirements.txt --only preinstall
 RUN poetry build
 
