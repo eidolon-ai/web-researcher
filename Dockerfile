@@ -1,5 +1,5 @@
 ARG EIDOLON_VERSION=0.1.158
-FROM python:3.11-slim as builder
+FROM python:3.11-slim AS builder
 RUN pip install poetry
 RUN poetry config virtualenvs.create false --local
 COPY pyproject.toml pyproject.toml
@@ -12,7 +12,7 @@ RUN poetry export --without dev --without-hashes --format=requirements.txt > dis
 RUN poetry export --without-hashes --format=requirements.txt > dist/pre_requirements.txt --only preinstall
 RUN poetry build
 
-FROM docker.io/eidolonai/sdk_base:$EIDOLON_VERSION as agent-machine-base
+FROM docker.io/eidolonai/sdk_base:$EIDOLON_VERSION AS agent-machine-base
 
 # Install playwright since it should be static
 ENV PLAYWRIGHT_BROWSERS_PATH=/opt/playwright
@@ -29,7 +29,7 @@ COPY --from=builder dist/*.whl /tmp/agent-machine/
 RUN pip install /tmp/agent-machine/*.whl --no-cache --no-deps
 
 
-FROM agent-machine-base as agent-machine
+FROM agent-machine-base AS agent-machine
 # Finally copy resources over since they will mutate most frequently
 COPY metrics.json /app/metrics.json
 
@@ -39,5 +39,5 @@ RUN addgroup --system --gid 1001 eidolon && adduser --system --uid 1001 --ingrou
 RUN mkdir -p /data/eidolon/files && chown -R eidolon:eidolon /data/eidolon
 USER eidolon
 EXPOSE 8080
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1
 ENTRYPOINT ["eidolon-server"]
