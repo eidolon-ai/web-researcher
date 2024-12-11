@@ -1557,13 +1557,13 @@ pydantic = ">=2.5.2,<3.0.0"
 
 [[package]]
 name = "eidolon-ai-sdk"
-version = "0.1.182"
+version = "0.1.183"
 description = "An open source sgent service SDK"
 optional = false
 python-versions = "<3.13,>=3.10"
 files = [
-    {file = "eidolon_ai_sdk-0.1.182-py3-none-any.whl", hash = "sha256:116fea0eed9e3616603b8110c6b1ac1f775c0528a1ac72cda25ea334a8211e91"},
-    {file = "eidolon_ai_sdk-0.1.182.tar.gz", hash = "sha256:651933b404b259b9e2617d24ad0c1ebe8a37744c944f27d106f2380a6b08e04b"},
+    {file = "eidolon_ai_sdk-0.1.183-py3-none-any.whl", hash = "sha256:efbe41f127e112f93ac570796f4a5c2eddc3ca98ad83b65b424e43a49516639f"},
+    {file = "eidolon_ai_sdk-0.1.183.tar.gz", hash = "sha256:c0d2a54556e791e8e6b28372cbfc4c866ce4ac27150d380f6e00a95e6483f85a"},
 ]
 
 [package.dependencies]
@@ -1583,7 +1583,7 @@ dulwich = ">=0.22.6,<0.23.0"
 eidolon-ai-client = ">=0.1.40,<0.2.0"
 eidolon-ai-mistralai = ">=0.1.6a,<0.2.0"
 eidolon-ai-usage-client = ">=0.1.10,<0.2.0"
-eidolon-browser-service = ">=0.1.5,<0.2.0"
+eidolon-browser-service = ">=0.1.6,<0.2.0"
 esprima = ">=4.0.1,<5.0.0"
 eval-type-backport = ">=0.2.0,<0.3.0"
 fastapi = ">=0.109.0"
@@ -1641,21 +1641,20 @@ pydantic = ">=2.6.4,<3.0.0"
 
 [[package]]
 name = "eidolon-browser-service"
-version = "0.1.5"
+version = "0.1.6"
 description = "Lightweight playwright wrapper for AI Agents"
 optional = false
 python-versions = "<3.13,>=3.10"
 files = [
-    {file = "eidolon_browser_service-0.1.5-py3-none-any.whl", hash = "sha256:faed81bba8193019712dfb686f8ebb7dca2e67c6fa0f4d0317de0db71e01e562"},
-    {file = "eidolon_browser_service-0.1.5.tar.gz", hash = "sha256:0c1081e00a3d31522ef425c270ed331c860150ccf3a89bc9b4d674a2d4cdda31"},
+    {file = "eidolon_browser_service-0.1.6-py3-none-any.whl", hash = "sha256:f34f55be1130b13dc6011ef45aa73e86cc5edb6b946307849ef5b0a6d4e6e494"},
+    {file = "eidolon_browser_service-0.1.6.tar.gz", hash = "sha256:ade8fa1c4dbd55971ce50f4820e4366fd5923924ed21467b5e69cec2a6db5aa5"},
 ]
 
 [package.dependencies]
-playwright = ">=1.49.0,<2.0.0"
 pydantic = ">=2.10.3,<3.0.0"
 
 [package.extras]
-server = ["fastapi[standard] (>=0.115.6,<0.116.0)"]
+server = ["fastapi[standard] (>=0.115.6,<0.116.0)", "playwright (>=1.49.0,<2.0.0)"]
 
 [[package]]
 name = "esprima"
@@ -6455,4 +6454,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "e3652f62091a42d3bb1311e11a9a5690807646d37e13eaa5e6283f4a114abaf9"
+content-hash = "077c1f4fd3a3422b52e5f25b5d3c08361329b04fe3260e837df489fa41bf69e0"
